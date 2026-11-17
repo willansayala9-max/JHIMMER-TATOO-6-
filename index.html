@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JMR - Taller de Tatuajes</title>
+
+<!-- FUENTES -->
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= CONFIGURACIÓN GENERAL ================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* ================= ENCABEZADO ================= */
+
+header{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(102,35,150,.55), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(20,65,180,.45), transparent 35%),
+        linear-gradient(135deg,#07030f,#170b2e,#101d4b,#08030e);
+    border-bottom:3px solid #6337a8;
+}
+
+/* ================= MENÚ ================= */
+
+.nav{
+    position:relative;
+    z-index:2;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.jmr{
+    font-family:"UnifrakturCook","Old English Text MT",serif;
+    font-size:90px;
+    font-weight:700;
+    letter-spacing:6px;
+    color:#ffffff;
+
+    text-shadow:
+        0 0 10px #8b4dff,
+        0 0 25px #365dff,
+        0 0 45px #6b1ba5;
+}
+
+/* LLAMA ANIMADA */
+
+.flame{
+    display:inline-block;
+    font-size:75px;
+    animation:llamaMover 1s infinite ease-in-out;
+    filter:drop-shadow(0 0 10px #ff6a00);
+}
+
+@keyframes llamaMover{
+
+    0%{
+        transform:translateY(0) rotate(-5deg) scale(1);
+    }
+
+    25%{
+        transform:translateY(-6px) rotate(5deg) scale(1.08);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(-4deg) scale(1.15);
+    }
+
+    75%{
+        transform:translateY(-6px) rotate(4deg) scale(1.08);
+    }
+
+    100%{
+        transform:translateY(0) rotate(-5deg) scale(1);
+    }
+}
+
+/* ================= MENÚ ENLACES ================= */
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#e5e0ff;
+    text-decoration:none;
+    font-size:19px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#9b72ff;
+    text-shadow:0 0 10px #674cff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:80px 20px 100px;
+}
+
+.hero h1{
+    font-family:"UnifrakturCook",serif;
+    font-size:76px;
+    margin-bottom:25px;
+
+    text-shadow:
+        0 0 8px #6d35bd,
+        0 0 22px #6f36d8,
+        0 0 45px #244db7;
+}
+
+.hero p{
+    font-family:Roboto,Arial,sans-serif;
+    font-size:24px;
+    color:#e1dcf5;
+}
+
+/* ================= BUSCADOR ================= */
+
+.search{
+    max-width:800px;
+    margin:50px auto;
+    display:flex;
+    padding:0 20px;
+}
+
+.search input{
+    flex:1;
+    padding:18px;
+    background:#16121e;
+    color:white;
+    border:2px solid #503d6e;
+    border-radius:10px 0 0 10px;
+    font-size:19px;
+    outline:none;
+}
+
+.search input:focus{
+    border-color:#7950d4;
+    box-shadow:0 0 15px rgba(100,70,220,.35);
+}
+
+.search button{
+    padding:18px 30px;
+    background:linear-gradient(135deg,#54259b,#1461aa);
+    color:white;
+    border:none;
+    border-radius:0 10px 10px 0;
+    font-size:19px;
+    cursor:pointer;
+}
+
+/* ================= SERVICIOS ================= */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#080808;
+    border:3px solid #354fa8;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 0 12px rgba(65,40,160,.25);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(104,55,210,.5);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#bbb;
+    font-size:18px;
+    line-height:1.5;
+}
+
+/* TARJETA SIN IMAGEN */
+
+.diseño-propio-imagen{
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:85px;
+    background:
+        radial-gradient(circle,rgba(120,50,220,.5),transparent 50%),
+        linear-gradient(135deg,#11081d,#172654);
+}
+
+/* ================= BOTONES ================= */
+
+.btn{
+    width:100%;
+    margin-top:20px;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#54259b,#1461aa);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:linear-gradient(135deg,#703bc4,#2078d4);
+    box-shadow:0 0 15px rgba(101,60,220,.5);
+}
+
+/* ================= GALERÍA ================= */
+
+#paginaGaleria{
+    display:none;
+    min-height:100vh;
+    padding:30px 7%;
+    background:#050505;
+}
+
+.galeria-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.galeria-top h1{
+    font-family:"UnifrakturCook",serif;
+    font-size:52px;
+    text-shadow:0 0 15px #693cc4;
+}
+
+.volver{
+    padding:12px 22px;
+    background:#2d2450;
+    color:white;
+    border:1px solid #7854b6;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+/* ================= TARJETAS DE TATUAJES ================= */
+
+.tattoo-card{
+    background:#111;
+    border:3px solid #4c48b8;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(75,50,170,.25);
+}
+
+.tattoo-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+}
+
+.tattoo-info{
+    padding:20px;
+}
+
+.tattoo-info h3{
+    font-size:24px;
+}
+
+.tattoo-info p{
+    color:#bbb;
+    margin-top:8px;
+}
+
+.precio{
+    color:#72bfff;
+    font-size:28px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+/* ================= CARRITO ================= */
+
+#botonCarrito{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border:2px solid #6545b8;
+    background:linear-gradient(135deg,#32106b,#123b9b);
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+#contador{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#c60000;
+    color:white;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ================= VENTANA CARRITO ================= */
+
+#ventanaCarrito{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.80);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+}
+
+.carrito-contenido{
+    width:90%;
+    max-width:500px;
+    max-height:85vh;
+    overflow:auto;
+    background:#121019;
+    padding:25px;
+    border-radius:18px;
+    border:2px solid #6243b8;
+}
+
+.item-carrito{
+    background:#211c2d;
+    padding:15px;
+    margin-bottom:12px;
+    border-radius:10px;
+}
+
+.item-carrito button{
+    background:#9d2020;
+    color:white;
+    border:none;
+    padding:7px 12px;
+    border-radius:6px;
+    margin-top:8px;
+    cursor:pointer;
+}
+
+.total{
+    font-size:27px;
+    color:#72bfff;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.cerrar{
+    float:right;
+    background:#423b55;
+    color:white;
+    border:none;
+    padding:7px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:60px;
+    background:linear-gradient(135deg,#0c0912,#171126);
+    border-top:2px solid #452a78;
+    padding:40px 10%;
+    font-size:20px;
+    line-height:2;
+}
+
+.whatsapp{
+    color:#20c768;
+}
+
+/* ================= CELULAR ================= */
+
+@media(max-width:600px){
+
+    .nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .jmr{
+        font-size:60px;
+    }
+
+    .flame{
+        font-size:50px;
+    }
+
+    nav{
+        gap:15px;
+    }
+
+    nav a{
+        font-size:16px;
+    }
+
+    .hero{
+        padding:60px 15px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .galeria-top{
+        flex-direction:column;
+        gap:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= PÁGINA PRINCIPAL ================= -->
+
+<div id="paginaInicio">
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+    <span class="flame">🔥</span>
+    <span class="jmr">JMR</span>
+</div>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+</div>
+
+<div class="hero" id="inicio">
+
+<h1>🔥 Taller de Tatuajes 🔥</h1>
+
+<p>Diseños únicos, arte en tu piel, hechos con cuidado.</p>
+
+</div>
+
+</header>
+
+<!-- ================= BUSCADOR ================= -->
+
+<div class="search">
+
+<input
+id="buscador"
+type="text"
+placeholder="Buscar estilo o diseño..."
+>
+
+<button onclick="buscarCategorias()">Buscar</button>
+
+</div>
+
+<!-- ================= SERVICIOS ================= -->
+
+<section class="container" id="servicios">
+
+<div class="cards">
+
+<!-- TINTA NEGRA -->
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGKSPb1m12sa3OCEgxeG5ej0qC6xL5E4qlvBWhjkGQ_A&s=10" alt="Tinta negra">
+
+<div class="card-content">
+
+<h2>Tinta Negra</h2>
+
+<p>
+Estilo: Tradicional<br>
+Dibujos definidos y sólidos
+</p>
+
+<button class="btn" onclick="abrirCategoria('negra')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+<!-- COLORES -->
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_zGqTLJG8P2ivklk2cWoo1WJO6TlK1UNLQIs3OzkuSA&s=10" alt="Tatuajes con colores">
+
+<div class="card-content">
+
+<h2>Con Colores</h2>
+
+<p>
+Estilo: Realista / Creativo<br>
+Tonos vivos y detalles finos
+</p>
+
+<button class="btn" onclick="abrirCategoria('colores')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+<!-- LETRAS -->
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlw4arOYJvE1jzJXKQphKFM9heiAHRye6cmXElGgaXNQ&s=10" alt="Letras y frases">
+
+<div class="card-content">
+
+<h2>Letras y Frases</h2>
+
+<p>
+Estilo: Caligrafía<br>
+Nombres, fechas y mensajes
+</p>
+
+<button class="btn" onclick="abrirCategoria('letras')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+<!-- DISEÑOS PROPIOS -->
+
+<div class="card">
+
+<div class="diseño-propio-imagen">
+🎨
+</div>
+
+<div class="card-content">
+
+<h2>Diseños Propios</h2>
+
+<p>
+Estilo: Personalizado<br>
+Tú lo imaginas, lo hacemos real
+</p>
+
+<button class="btn" onclick="abrirCategoria('propios')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+<!-- CUBRIMIENTOS -->
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHY0g1m4kjgm5YHUkEtDlPSUmpL7IYOuYZYR0BbEWc3Q&s=10" alt="Cubrimientos">
+
+<div class="card-content">
+
+<h2>Cubrimientos</h2>
+
+<p>
+Estilo: Renovación<br>
+Mejoramos o tapamos tatuajes
+</p>
+
+<button class="btn" onclick="abrirCategoria('cubrimientos')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+<!-- GRANDES -->
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwS4szW0BiueYEWshNLdO_-1IrzhCJDHLV-rLpKr4SQ&s=10" alt="Grandes y complejos">
+
+<div class="card-content">
+
+<h2>Grandes y Complejos</h2>
+
+<p>
+Estilo: Arte completo<br>
+Diseños amplios y detallados
+</p>
+
+<button class="btn" onclick="abrirCategoria('grandes')">
+Ver diseños
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+
+<footer id="contacto">
+
+📍 Ubicación: Sucre, Azari<br>
+
+📞 Contacto: 73420935<br>
+
+💬 WhatsApp: <span class="whatsapp">73420935</span><br>
+
+🕘 Abierto: Lunes a Sábado – 9:00am a 19:00pm
+
+</footer>
+
+</div>
+
+<!-- ================= GALERÍA ================= -->
+
+<div id="paginaGaleria">
+
+<div class="galeria-top">
+
+<h1 id="tituloCategoria">Diseños</h1>
+
+<button class="volver" onclick="volverInicio()">
+← Volver al inicio
+</button>
+
+</div>
+
+<div class="galeria" id="listaTatuajes"></div>
+
+</div>
+
+<!-- ================= CARRITO ================= -->
+
+<button id="botonCarrito" onclick="abrirCarrito()">
+🛒
+<span id="contador">0</span>
+</button>
+
+<div id="ventanaCarrito">
+
+<div class="carrito-contenido">
+
+<button class="cerrar" onclick="cerrarCarrito()">✕</button>
+
+<h2>🛒 Mi carrito</h2>
+
+<div id="itemsCarrito"></div>
+
+<div class="total" id="totalCarrito">
+Total: Bs 0.00
+</div>
+
+<button class="btn" onclick="enviarWhatsApp()">
+💬 Enviar pedido por WhatsApp
+</button>
+
+</div>
+</div>
+
+<script>
+
+/* ================= CATEGORÍAS CON TUS IMÁGENES ================= */
+
+const categorias = {
+
+negra:{
+    titulo:"Tinta Negra",
+    tatuajes:[
+        {
+            nombre:"Tinta negra 1",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGKSPb1m12sa3OCEgxeG5ej0qC6xL5E4qlvBWhjkGQ_A&s=10",
+            precio:700
+        },
+        {
+            nombre:"Tinta negra 2",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4e3aVKtnaGaemueQc3yF1wDw3NjqlCXFqhpWQOI5o4A0PCxqJ1lWEN1wC&s=10",
+            precio:1200
+        },
+        {
+            nombre:"Tinta negra 3",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm7I3Oma7qa7PzjYsTPq8DbfLHljYBpVBU8kxgnmzl3A&s=10",
+            precio:550
+        }
+    ]
+},
+
+colores:{
+    titulo:"Tatuajes Con Colores",
+    tatuajes:[
+        {
+            nombre:"Diseño a color 1",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_zGqTLJG8P2ivklk2cWoo1WJO6TlK1UNLQIs3OzkuSA&s=10",
+            precio:1300
+        },
+        {
+            nombre:"Diseño a color 2",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq65Bxjt2MsbQ3llIdEWE8v8UA_IFS2IomVKKmt8GvBw&s=10",
+            precio:1100
+        },
+        {
+            nombre:"Diseño a color 3",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaY8YiWo_EN8H_YqK5VY3QuRcdQYEutYaOJy4hdezpRw&s=10",
+            precio:990
+        }
+    ]
+},
+
+letras:{
+    titulo:"Letras y Frases",
+    tatuajes:[
+        {
+            nombre:"Frase o letra 1",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlw4arOYJvE1jzJXKQphKFM9heiAHRye6cmXElGgaXNQ&s=10",
+            precio:520
+        },
+        {
+            nombre:"Frase o letra 2",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl6RkTWfKWehr0yjwU9NCBMbe_FF3rZ9KWFgApAlg-lg&s=10",
+            precio:450
+        },
+        {
+            nombre:"Frase o letra 3",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8n0c-fSj0JdZCJA7H8sRyglNH9su7aQqN8CLzVfHCOg&s=10",
+            precio:550
+        }
+    ]
+},
+
+propios:{
+    titulo:"Diseños Propios",
+    tatuajes:[
+        {
+            nombre:"Tu diseño personalizado",
+            imagen:"",
+            precio:599
+        }
+    ]
+},
+
+cubrimientos:{
+    titulo:"Cubrimientos",
+    tatuajes:[
+        {
+            nombre:"Cubrimiento 1",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHY0g1m4kjgm5YHUkEtDlPSUmpL7IYOuYZYR0BbEWc3Q&s=10",
+            precio:800
+        },
+        {
+            nombre:"Cubrimiento 2",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOaH6DbJMWAOuHpvfviTcFDmCHHAJ8Hoou3jvY3oOyQg&s=10",
+            precio:1000
+        },
+        {
+            nombre:"Cubrimiento 3",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1VvulqtHI-FfNVXB7gVqn7POZGRg6nYyG5iiMA8tKEg&s=10",
+            precio:1200
+        }
+    ]
+},
+
+grandes:{
+    titulo:"Grandes y Complejos",
+    tatuajes:[
+        {
+            nombre:"Diseño grande 1",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwS4szW0BiueYEWshNLdO_-1IrzhCJDHLV-rLpKr4SQ&s=10",
+            precio:2600
+        },
+        {
+            nombre:"Diseño grande 2",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2hquWhy4QsLv22X7JTn0yULQI7VRaeXGcnxo7xwWUxA&s=10",
+            precio:1500
+        },
+        {
+            nombre:"Diseño grande 3",
+            imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-BDjtadzQLjbSbNdhqXr8Xz4hCMv0A3pN36XUTN_7A&s=10",
+            precio:5500
+        }
+    ]
+}
+
+};
+
+
+/* ================= ABRIR CATEGORÍA ================= */
+
+function abrirCategoria(id){
+
+    document.getElementById("paginaInicio").style.display="none";
+    document.getElementById("paginaGaleria").style.display="block";
+
+    const categoria = categorias[id];
+
+    document.getElementById("tituloCategoria").textContent =
+    categoria.titulo;
+
+    const lista = document.getElementById("listaTatuajes");
+
+    lista.innerHTML="";
+
+    categoria.tatuajes.forEach((tattoo,indice)=>{
+
+        let imagenHTML = "";
+
+        if(tattoo.imagen !== ""){
+            imagenHTML = `
+            <img src="${tattoo.imagen}" alt="${tattoo.nombre}">
+            `;
+        }else{
+            imagenHTML = `
+            <div class="diseño-propio-imagen">🎨</div>
+            `;
+        }
+
+        lista.innerHTML += `
+
+        <div class="tattoo-card">
+
+        ${imagenHTML}
+
+        <div class="tattoo-info">
+
+        <h3>${tattoo.nombre}</h3>
+
+        <p>Diseño disponible para tu cita</p>
+
+        <div class="precio">
+        Bs ${tattoo.precio.toFixed(2)}
+        </div>
+
+        <button class="btn"
+        onclick="agregarCarrito('${id}',${indice})">
+
+        🛒 Agregar al carrito
+
+        </button>
+
+        </div>
+
+        </div>
+
+        `;
+    });
+
+    window.scrollTo(0,0);
+}
+
+
+/* ================= VOLVER ================= */
+
+function volverInicio(){
+
+    document.getElementById("paginaGaleria").style.display="none";
+
+    document.getElementById("paginaInicio").style.display="block";
+
+    window.scrollTo(0,0);
+}
+
+
+/* ================= CARRITO ================= */
+
+let carrito=[];
+
+
+function agregarCarrito(categoriaId,indice){
+
+    const tatuaje =
+    categorias[categoriaId].tatuajes[indice];
+
+    carrito.push(tatuaje);
+
+    actualizarCarrito();
+
+    alert(tatuaje.nombre + " fue agregado al carrito 🛒");
+}
+
+
+function actualizarCarrito(){
+
+    document.getElementById("contador").textContent =
+    carrito.length;
+
+    const lista =
+    document.getElementById("itemsCarrito");
+
+    lista.innerHTML="";
+
+    let total=0;
+
+    carrito.forEach((item,indice)=>{
+
+        total += item.precio;
+
+        lista.innerHTML += `
+
+        <div class="item-carrito">
+
+        <strong>${item.nombre}</strong><br>
+
+        <span style="color:#72bfff">
+        Bs ${item.precio.toFixed(2)}
+        </span>
+
+        <br>
+
+        <button onclick="eliminarDelCarrito(${indice})">
+        Eliminar
+        </button>
+
+        </div>
+
+        `;
+    });
+
+    document.getElementById("totalCarrito").textContent =
+    "Total: Bs " + total.toFixed(2);
+}
+
+
+function eliminarDelCarrito(indice){
+
+    carrito.splice(indice,1);
+
+    actualizarCarrito();
+}
+
+
+/* ================= ABRIR Y CERRAR CARRITO ================= */
+
+function abrirCarrito(){
+    document.getElementById("ventanaCarrito").style.display="flex";
+}
+
+function cerrarCarrito(){
+    document.getElementById("ventanaCarrito").style.display="none";
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function enviarWhatsApp(){
+
+    if(carrito.length===0){
+
+        alert("Tu carrito está vacío 🛒");
+
+        return;
+    }
+
+    let mensaje =
+    "Hola JMR 👋%0A%0A" +
+    "Quiero pedir una cita para los siguientes tatuajes:%0A%0A";
+
+    let total=0;
+
+    carrito.forEach((item,indice)=>{
+
+        mensaje +=
+        (indice+1)+". "+
+        item.nombre+
+        " - Bs "+
+        item.precio.toFixed(2)+
+        "%0A";
+
+        total += item.precio;
+    });
+
+    mensaje +=
+    "%0A💰 Total: Bs "+
+    total.toFixed(2);
+
+    const telefono="59173420935";
+
+    window.open(
+        "https://wa.me/"+telefono+"?text="+mensaje,
+        "_blank"
+    );
+}
+
+
+/* ================= BUSCADOR ================= */
+
+function buscarCategorias(){
+
+    const texto =
+    document.getElementById("buscador")
+    .value
+    .toLowerCase()
+    .trim();
+
+    const tarjetas =
+    document.querySelectorAll(".card");
+
+    tarjetas.forEach(tarjeta=>{
+
+        if(tarjeta.innerText.toLowerCase().includes(texto)){
+
+            tarjeta.style.display="block";
+
+        }else{
+
+            tarjeta.style.display="none";
+        }
+
+    });
+}
+
+</script>
+
+</body>
+</html>
